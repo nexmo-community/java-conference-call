@@ -3,8 +3,24 @@
  */
 package com.nexmo.example.conference;
 
+import com.nexmo.client.voice.ncco.ConversationAction;
+import com.nexmo.client.voice.ncco.Ncco;
+import com.nexmo.client.voice.ncco.TalkAction;
+
+import static spark.Spark.get;
+import static spark.Spark.port;
+
 public class App {
     public static void main(String[] args) {
+        TalkAction talk = TalkAction.builder("You will now be added to the conference call.").build();
+        ConversationAction conversation = ConversationAction.builder("team-meeting").build();
 
+        Ncco ncco = new Ncco(talk, conversation);
+
+        port(3000);
+        get("/webhooks/answer", (req, res) -> {
+            res.type("application/json");
+            return ncco.toJson();
+        });
     }
 }
