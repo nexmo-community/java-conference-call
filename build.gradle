@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
-    implementation 'com.google.guava:guava:26.0-jre'
+    implementation 'com.google.guava:guava:30.0-android'
     implementation "com.sparkjava:spark-core:2.8.0"
     implementation "com.nexmo:client:5.0.0"
 
