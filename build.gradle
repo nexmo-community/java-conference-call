@@ -27,7 +27,7 @@ dependencies {
     implementation "com.nexmo:client:5.0.0"
 
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.1'
 }
 
 // Define the main class for the application
